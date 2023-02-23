@@ -8,7 +8,7 @@ export const App = () => {
   return (
     <div className="container">
       <h1>Country List</h1>
-      <CountryList countriesInfo={transformedCountries} />
+      <CountryList countries={transformedCountries} />
     </div>
   );
 };

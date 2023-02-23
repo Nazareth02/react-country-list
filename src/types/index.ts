@@ -1,22 +1,26 @@
 interface CountryApi {
-  flags: Flags;
-  name: Name;
+  flags: CountryFlags;
+  name: CountryName;
   capital: string[];
   region: string;
   area: number;
   population: number;
 }
-interface Flags {
+interface CountryFlags {
   png: string;
   svg: string;
 }
-interface Name {
+interface CountryName {
   common: string;
   official: string;
-  nativeName: NativeName;
+  nativeName: CountryNativeName;
 }
-interface NativeName {
-  [key: string]: { official: string; common: string } | undefined;
+interface CountryNativeName {
+  [name: string]: CountryNativeNameApi | undefined;
+}
+interface CountryNativeNameApi {
+  official: string;
+  common: string;
 }
 interface Country {
   flagImg: string;

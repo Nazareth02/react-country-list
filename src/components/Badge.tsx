@@ -1,18 +1,18 @@
 import React from "react";
 import { Color } from "../ui/colors";
 
+type BadgeLabel = "area" | "population";
+
 interface BadgeProps {
   color: Color;
-  info: number;
-}
-interface BadgeLabel {
-  label: "area" | "population";
+  value: number;
+  label: BadgeLabel;
 }
 
-export const Badge = ({ color, label, info }: BadgeProps & BadgeLabel) => {
+export const Badge = ({ color, label, value }: BadgeProps) => {
   return (
     <span className={`badge p-2 ms-2 bg-${color}`}>
-      {label}: {info}
+      {label}: {value}
     </span>
   );
 };

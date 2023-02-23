@@ -3,13 +3,13 @@ import { Country } from "../types";
 import { CountryItem } from "./CountryItem";
 
 interface CountryListProps {
-  countriesInfo: Country[];
+  countries: Country[];
 }
-export const CountryList = ({ countriesInfo }: CountryListProps) => {
+export const CountryList = ({ countries }: CountryListProps) => {
   return (
     <ul className="list-group">
-      {countriesInfo.map((country) => (
-        <CountryItem key={country.name} countryItemInfo={country} />
+      {countries.map((country) => (
+        <CountryItem key={country.name} country={country} />
       ))}
     </ul>
   );
